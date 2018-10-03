@@ -9,6 +9,14 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
+app.get('/quem-eramos', (req, res) => {
+    res.render('quem-eramos');
+});
+
+app.get('/quem-somos', (req, res) => {
+    res.render('quem-somos');
+});
+
 app.listen(3000, () => {
     console.log('Servidor inicializado.');
 });
