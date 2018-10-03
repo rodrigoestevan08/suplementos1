@@ -1,0 +1,34 @@
+@media screen and (min-width: 470px){
+  header>div{
+    display: none;
+  }
+
+  header h1{
+    font-size: 24pt;
+  }
+
+  #navegacao{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #navegacao input{
+    display: none;
+  }
+
+  #navegacao>div{
+    display: inline-block;
+  }
+
+  #navegacao nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 13pt;
+  width: 85%;
+  }
+
+  #navegacao nav a{
+    border: 2px solid black;
+  }
+}
