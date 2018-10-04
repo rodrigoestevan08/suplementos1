@@ -1,26 +1,15 @@
 const express = require('express');
-const fs = require('fs');
+const expressMongoDb = require('express-mongo-db');
+
 const app = express();
 
 app.set('view engine', 'ejs');
 app.use('/assets', express.static('assets'));
+app.use(expressMongoDb('mongodb://localhost/tiojolo'));
 
 app.get('/', (req, res) => {
-    fs.readFile('produtos.csv', {encoding: 'utf8'}, (erro, dados) => {
-        let linhas = dados.split('\n');
-        let produtos = [];
-
-        for(let linha of linhas){
-            let colunas = linha.split(';');
-            
-            produtos.push({
-                imagem: colunas[0],
-                descricao: colunas[1],
-                preco: colunas[2]
-            });
-        }
-
-        res.render('home', {'produtos': produtos});
+    req.db.collection('produtos').find().toArray((erro, dados) => {
+        res.render('home', {'produtos': dados});
     });
 });
 
