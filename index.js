@@ -1,6 +1,7 @@
 const express = require('express');
 const expressMongoDb = require('express-mongo-db');
 const bodyParser = require('body-parser');
+const ObjectID = require('mongodb').ObjectID;
 
 const app = express();
 
@@ -16,12 +17,37 @@ app.get('/', (req, res) => {
 });
 
 app.get('/admin', (req, res) => {
-    res.render('admin', {resposta: false});
+    res.render('admin', {resposta: ""});
 });
 
 app.post('/admin', (req, res) => {
-    req.db.collection('produtos').insert(req.body, (erro) => {
-        res.render('admin', {resposta: true});
+    let produto = {
+        imagem: req.body.imagem,
+        preco: req.body.preco,
+        descricao: req.body.descricao
+    }
+    
+    if(!produto.imagem || !produto.descricao || !produto.preco){
+        res.status(400).render('admin', {resposta: "Preencha todos os campos"});
+        return;
+    }
+
+    req.db.collection('produtos').insert(produto, (erro) => {
+        res.status(201).render('admin', {resposta: "Deu bom"});
+    });
+});
+
+app.get('/admin/lista', (req, res) => {
+    req.db.collection('produtos').find().toArray((erro, dados) => {
+        res.render('admin-lista', {'produtos': dados});
+    });
+});
+
+app.post('/admin/lista', (req, res) => {
+    req.db.collection('produtos').remove({_id: ObjectID(req.body.id)}, () => {
+        req.db.collection('produtos').find().toArray((erro, dados) => {
+            res.render('admin-lista', {'produtos': dados});
+        });
     });
 });
 
