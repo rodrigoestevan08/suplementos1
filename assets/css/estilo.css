@@ -2,8 +2,10 @@ body{
   max-width: 1200px;
   font-family: 'Indie Flower', 'cursive';
   margin: 0;
-  background: url('../imagens/bg.jpg');
+  /* background: url('../imagens/bg.jpg'); */
   background-repeat: cover;
+  background-image: linear-gradient(darkmagenta, pink);
+
 }
 
 #navegacao h2{
@@ -16,7 +18,7 @@ header{
   align-items: center;
   justify-content: space-around;
   height: 15vh;
-  background-color: rgba(175, 175, 156, 0.8);
+  background-color:darkmagenta;
 }
 
 header>div{
