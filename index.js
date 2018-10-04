@@ -7,7 +7,7 @@ const app = express();
 
 app.set('view engine', 'ejs');
 app.use('/assets', express.static('assets'));
-app.use(expressMongoDb('mongodb://rodrigo:r83789159@ds123753.mlab.com:23753/tijolos'));
+app.use(expressMongoDb('mongodb://rodrigo:r83789159@ds223763.mlab.com:23763/yasmin'));
 app.use(bodyParser.urlencoded());
 
 app.get('/', (req, res) => {
@@ -23,11 +23,11 @@ app.get('/admin', (req, res) => {
 app.post('/admin', (req, res) => {
     let produto = {
         imagem: req.body.imagem,
-        preco: req.body.preco,
+        // preco: req.body.preco,
         descricao: req.body.descricao
     }
     
-    if(!produto.imagem || !produto.descricao || !produto.preco){
+    if(!produto.imagem || !produto.descricao){
         res.status(400).render('admin', {resposta: "Preencha todos os campos"});
         return;
     }
