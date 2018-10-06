@@ -80,9 +80,9 @@ header h1{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 90%;
-  max-width: 350px;
+  max-width: 300px;
   margin: 20px 0;
 }
 
@@ -92,15 +92,15 @@ header h1{
 }
 
 .produto img{
-  width: 60vw;
-  height: 60vw;
-  max-width: 250px;
-  max-height: 250px;
+  width: 40vw;
+  height: 40vw;
+  max-width: 200px;
+  max-height: 200px;
 }
 
-#info{
+/* #info{
   height: 20px;
   width: 50%;
   border: 2px solid black;
   margin: 10px auto 0;
-}
+} */
