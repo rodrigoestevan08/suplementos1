@@ -61,10 +61,10 @@ header h1{
   padding: 0 2px;
 }
 
-#navegacao input{
+/* #navegacao input{
   font-family: 'Indie Flower', 'cursive';
   border: 2px solid black;
-  padding: 5px 10px 5px 25px;
+  padding: 5px 10px 5px 25px; */
 }
 
 #itens{
@@ -89,6 +89,7 @@ header h1{
 .produto p{
   font-weight: bold;
   font-size: 14pt;
+  text-decoration: white;
 }
 
 .produto img{
