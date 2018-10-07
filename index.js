@@ -7,7 +7,7 @@ const app = express();
 
 app.set('view engine', 'ejs');
 app.use('/assets', express.static('assets'));
-app.use(expressMongoDb('mongodb://rodrigo:r83789159@ds223763.mlab.com:23763/yasmin'));
+app.use(expressMongoDb('mongodb://rodrigo:r83789159@ds051853.mlab.com:51853/suplementos'));
 app.use(bodyParser.urlencoded());
 
 app.get('/', (req, res) => {
