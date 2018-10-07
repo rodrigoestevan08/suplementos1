@@ -2,9 +2,9 @@ body{
   max-width: 1200px;
   font-family: 'Indie Flower', 'cursive';
   margin: 0;
-  /* background: url('../imagens/bg.jpg'); */
+  background: url('../imagens/bd.jpg');
   background-repeat: cover;
-  background-image: linear-gradient(darkmagenta, pink);
+  /* background-image: linear-gradient(darkmagenta, pink); */
 
 }
 
@@ -18,7 +18,7 @@ header{
   align-items: center;
   justify-content: space-around;
   height: 15vh;
-  background-color:darkmagenta;
+  background-color:red;
 }
 
 header>div{
